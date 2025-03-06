@@ -9,7 +9,7 @@ tasks:
       url: "https://github.com/qbcore-framework/txAdminRecipe"
       branch: "main"
 
-  - action: "setupDatabase"
+  - action: "configureDatabase"
     data:
       type: "mysql"
       host: "localhost"
@@ -36,7 +36,8 @@ tasks:
         set mysql_connection_string "mysql://root:password@localhost/fivem_database"
         exec resources.cfg
 
-  - action: "runServer"
+  - action: "startServer"
+
 
 
 
