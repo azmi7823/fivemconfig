@@ -4,6 +4,11 @@ description: "FiveM QBCore Server dengan Ox Inventory dan Mechanic Job"
 version: 1.0
 
 tasks:
+  - action: "cloneRepository"
+    data:
+      url: "https://github.com/qbcore-framework/txAdminRecipe"
+      branch: "main"
+
   - action: "setupDatabase"
     data:
       type: "mysql"
@@ -31,6 +36,7 @@ tasks:
         set mysql_connection_string "mysql://root:password@localhost/fivem_database"
         exec resources.cfg
 
-  - action: "restartServer"
+  - action: "runServer"
+
 
 
