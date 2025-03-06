@@ -1,0 +1,49 @@
+name: "IKN Ibukota Nusantara"
+author: "USERNAME"
+description: "FiveM QBCore Server dengan Ox Inventory dan Mechanic Job"
+version: 1.0
+
+tasks:
+  - action: "setFXServerPorts"
+    data:
+      port: 30120
+
+  - action: "setupDatabase"
+    data:
+      type: "mysql"
+      host: "localhost"
+      user: "root"
+      password: "password"
+      database: "fivem_database"
+
+  - action: "installResources"
+    data:
+      resources:
+        - "qb-core"
+        - "oxmysql"
+        - "ox_inventory"
+        - "ox_target"
+        - "qb-mechanic"
+        - "mechanic_job"
+
+  - action: "setupFiles"
+    data:
+      server.cfg: |
+        endpoint_add_tcp "0.0.0.0:30120"
+        endpoint_add_udp "0.0.0.0:30120"
+        sv_licenseKey "GANTI_DENGAN_LICENSE_KEY_FIVEM_ANDA"
+        set mysql_connection_string "mysql://root:password@localhost/fivem_database"
+        exec resources.cfg
+
+  - action: "configureFramework"
+    data:
+      framework: "qbcore"
+      use_default_jobs: true
+      use_default_inventory: false
+      use_default_garages: true
+      use_default_banking: true
+      use_default_shops: true
+      use_default_housing: true
+
+  - action: "restartServer"
+
