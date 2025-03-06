@@ -1,0 +1,53 @@
+server:
+  name: "IKN Ibukota Nusantara"
+  locale: "en"
+  max_clients: 64
+  license_key: "GANTI_DENGAN_LICENSE_KEY_FIVEM_ANDA"
+
+database:
+  type: "mysql"
+  host: "localhost"
+  user: "root"
+  password: "password"
+  name: "fivem_database"
+
+framework:
+  base: "qbcore"
+  use_default_jobs: true
+  use_default_inventory: false  # Menggunakan Ox Inventory
+  use_default_garages: true
+  use_default_banking: true
+  use_default_shops: true
+  use_default_housing: true
+
+resources:
+  - "qb-core"
+  - "oxmysql"
+  - "ox_inventory"
+  - "ox_target"
+  - "qb-mechanic"
+  - "mechanic_job"
+
+mechanic:
+  job_name: "mechanic"
+  ox_target: true
+  tune_up:
+    enable: true
+    features:
+      - nitro
+      - wheels
+      - engine_upgrade
+
+ox_inventory:
+  enable: true
+  items:
+    - name: nitro
+      label: "Nitro Boost"
+      description: "Tambahkan nitro ke kendaraanmu!"
+      weight: 500
+      stack: false
+    - name: wheel_kit
+      label: "Wheel Kit"
+      description: "Ganti velg kendaraanmu!"
+      weight: 300
+      stack: false
