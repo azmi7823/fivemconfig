@@ -4,10 +4,6 @@ description: "FiveM QBCore Server dengan Ox Inventory dan Mechanic Job"
 version: 1.0
 
 tasks:
-  - action: "setFXServerPorts"
-    data:
-      port: 30120
-
   - action: "setupDatabase"
     data:
       type: "mysql"
@@ -35,15 +31,6 @@ tasks:
         set mysql_connection_string "mysql://root:password@localhost/fivem_database"
         exec resources.cfg
 
-  - action: "configureFramework"
-    data:
-      framework: "qbcore"
-      use_default_jobs: true
-      use_default_inventory: false
-      use_default_garages: true
-      use_default_banking: true
-      use_default_shops: true
-      use_default_housing: true
-
   - action: "restartServer"
+
 
